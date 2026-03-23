@@ -1,0 +1,57 @@
+<!DOCTYPE html> <!--aviso o navegador a linguagem-->
+<html lang="pt-br"> <!--idioma-->
+<head> <!--Cabeçalho de configuração-->
+    <meta charset="UTF-8"> <!--configura a codificação de caracteres-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login facial</title>
+    <link rel="stylesheet" href="face.css">
+    <link rel="icon" type="image/x-icon" href="imagens/logo.png">
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js">  </script>
+</head>
+<body>
+    <body class="body-face">
+        <main class="pagina-face">
+            <section class="face-container">
+                <img src="imagens/logo.png" alt="Fittest" class="logo-face">
+                <h1>Login com reconhecimento facial</h1>
+                <p class="face-texto">Posicione seu rosto dentro da mouldura para cadstrar ou fazer login.
+                </p>
+                <div class="camera-box">
+                    <video id="videoFace" autoplay muted playsinline></video>
+                    <canvas id="canvasFace"></canvas>
+                    <div class="moldura-rosto"></div>
+                </div>
+
+                <div id="statusFace" class="status-face">aguardando ação.
+                </div>
+
+                <div class="botoes-face">
+                    <button id="btnIniciarCamera" class="btn-face btn-primary">
+                        🫣Iniciar câmera
+                    </button>
+                    <button id="btnCadastrarFace" class="btn-face btn-success" style="display:none">
+                        🫥Cadastrar rosto
+                    </button>
+                    <button id="btnEntrarFace" class="btn-face btn-info" style="display:none">
+                        🫡Fazer login
+                    </button>
+                </div>
+
+                <div class="term-face" id="termofacewrap" style="display:none">
+                    <label>
+                        <input type="checkbox" id="aceitotermoface"/>
+                        Aceito os termos de uso para cadastro facial.
+                    </label>
+                </div>
+                <a href="login.html" class="voltar-login">
+                    ← Voltar para login
+                </a>
+            </section>
+        </main>
+
+        <script type="module" src="js/face-auth.js">
+        </script>
+
+    </body>
+</body>
+</html>
